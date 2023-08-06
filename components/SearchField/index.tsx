@@ -11,7 +11,8 @@ export default function SearchField() {
   const _onEnter: React.KeyboardEventHandler<HTMLInputElement> = useCallback(
     (e) => {
       if (e.code === 'Enter' && !composing) {
-        location.href = `/search?q=${inputRef.current?.value}`;
+        const searchWord = inputRef.current?.value;
+        location.href = searchWord ? `/search?q=${inputRef.current?.value}` : `/`;
       }
     },
     [composing],

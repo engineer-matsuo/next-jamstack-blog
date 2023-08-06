@@ -1,6 +1,11 @@
 import { Metadata } from 'next';
 import { getDetail } from '@/libs/microcms';
 import Article from '@/components/Article';
+import { getAllBlogs } from '@/libs/dynamic';
+
+type Blog = {
+  id: string;
+}
 
 type Props = {
   params: {
@@ -11,28 +16,30 @@ type Props = {
   };
 };
 
-export const revalidate = 60;
+// export const revalidate = 60;
 
-export async function generateMetadata({ params, searchParams }: Props): Promise<Metadata> {
-  const data = await getDetail(params.slug, {
-    draftKey: searchParams.dk,
-  });
-
-  return {
-    title: data.title,
-    description: data.description,
-    openGraph: {
-      title: data.title,
-      description: data.description,
-      images: [data?.thumbnail?.url || ''],
-    },
-  };
+export default async function Page({ params } : {params: {slug: string}}) {
+  const data = await getDetail(params.slug);
+  return <Article data={data} />;
 }
 
-export default async function Page({ params, searchParams }: Props) {
-  const data = await getDetail(params.slug, {
-    draftKey: searchParams.dk,
-  });
+// export async function Page(props:any) {
+//   return {
+//     title: props.title,
+//     description: props.description,
+//     openGraph: {
+//       title: props.title,
+//       description: props.description,
+//       images: [props?.thumbnail?.url || ''],
+//     },
+//   };
+// }
 
-  return <Article data={data} />;
+export async function generateStaticParams() {
+  const data = await getAllBlogs();
+  const paths = data.map((blog: Blog) => ({
+    slug: blog.id,
+  }));
+  console.log(paths);
+  return paths
 }
