@@ -1,5 +1,5 @@
 import { getList, getTagList, Tag, Blog } from '@/libs/microcms';
-import { LIMIT } from '@/constants';
+import { LIMIT, GET_TAGS_LIMIT } from '@/constants';
 import Pagination from '@/components/Pagination';
 import ArticleList from '@/components/ArticleList';
 
@@ -14,8 +14,6 @@ type Paths = {
   tagId: string;
   current: string;
 }
-
-const GET_TAGS_LIMIT = 50;
 
 // export const revalidate = 60;
 
