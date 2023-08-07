@@ -47,8 +47,6 @@ export const getSearchList = async (queries?: MicroCMSQueries) => {
   // offsetの値があれば、その値ないならデフォルト0を使う
   const offset = queries?.offset || 0;
 
-  console.log('limit', limit);
-  console.log('offset', offset);
   const listData = await fetch(
     `${process.env.NEXT_PUBLIC_SEARCH_API_DOMAIN}/api/search?${searchWord ? "q=" + searchWord + "&": ""}limit=${limit}&offset=${offset}`,
     {

@@ -16,9 +16,18 @@ export default function Pagination({ totalCount, current = 1, basePath = '', q }
       {pages.map((p) => (
         <li className={styles.list} key={p}>
           {current !== p ? (
-            <Link href={`${basePath}/p/${p}` + (q ? `?q=${q}` : '')} className={styles.item}>
-              {p}
-            </Link>
+            // クエリパラメータのパターンによって? か & をつける
+            // basePathにtagsが含まれている場合パスパラメータ方式にする
+            basePath.includes('tags') ? (
+              // tagsがパスに含まれる場合
+              <Link href={`${basePath}/p/${p}` + (q ? `?q=${q}` : '')} className={styles.item}>
+                {p}
+              </Link>
+            ) : (
+              <Link href={`${basePath}/p` + (p ? `?p=${p}` : '') + (p && q ? `&q=${q}` : !p && q ? `?q=${q}`: '' )} className={styles.item}>
+                {p}
+              </Link>
+            )
           ) : (
             <span className={`${styles.item} ${styles.current}`}>{p}</span>
           )}

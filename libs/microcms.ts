@@ -29,7 +29,7 @@ export type Blog = {
   thumbnail?: MicroCMSImage;
   tags?: Tag[];
   writer?: Writer;
-};
+} & MicroCMSContentId;
 
 export type Article = Blog & MicroCMSContentId & MicroCMSDate;
 
@@ -95,3 +95,4 @@ export const getTag = async (contentId: string, queries?: MicroCMSQueries) => {
 
   return detailData;
 };
+
