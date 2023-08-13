@@ -18,6 +18,5 @@ export async function generateStaticParams() {
   const paths = data.map((blog: Blog) => ({
     slug: blog.id,
   }));
-  // console.log(paths);
   return paths
 }

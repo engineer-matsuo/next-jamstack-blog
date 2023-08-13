@@ -12,7 +12,7 @@ export default function SearchField() {
     (e) => {
       if (e.code === 'Enter' && !composing) {
         const searchWord = inputRef.current?.value;
-        location.href = searchWord ? `/search?q=${inputRef.current?.value}` : `/`;
+        location.href = searchWord ? `/search?q=${inputRef.current?.value}` : `/list`;
       }
     },
     [composing],

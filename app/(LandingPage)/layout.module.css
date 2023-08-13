@@ -1,0 +1,19 @@
+.main {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+/* 640px以上1200px未満ならwidth 600 */
+@media (max-width: 1200px) {
+  .main {
+    width: auto;
+    padding: 24px;
+  }
+}
+/* 
+@media (max-width: 640px) {
+  .main {
+    width: auto;
+    padding: 24px;
+  }
+} */

@@ -12,7 +12,7 @@ export default async function Page() {
   return (
     <>
       <ArticleList articles={data.contents} />
-      <Pagination totalCount={data.totalCount} />
+      <Pagination totalCount={data.totalCount} basePath='/list' />
     </>
   );
 }
