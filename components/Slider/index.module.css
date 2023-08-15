@@ -1,4 +1,4 @@
-.main {
+/* .main {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -183,7 +183,16 @@
   padding: 1rem;
 }
 
-@media (max-width: 640px) {
+.slider-img {
+  margin: 0 10px;
+}
+
+.swiper {
+  overflow: visible;
+  width:'80%';
+} */
+
+/* @media (max-width: 640px) {
   .title {
     font-size: 2rem;
     margin-bottom: 20px;
@@ -228,4 +237,4 @@
   .content {
     width: 100%;
   }
-}
+} */

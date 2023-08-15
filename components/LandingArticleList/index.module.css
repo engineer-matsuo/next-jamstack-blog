@@ -1,0 +1,63 @@
+.main {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+/* 640px以上1200px未満ならwidth 600 */
+@media (max-width: 1200px) {
+  .main {
+    width: auto;
+    padding: 24px;
+  }
+}
+/* 
+@media (max-width: 640px) {
+  .main {
+    width: auto;
+    padding: 24px;
+  }
+} */
+
+.landing_title {
+  background: none;
+  border: none;
+  border-radius: 0;
+  color: inherit;
+  letter-spacing: var(--swl-letter_spacing,.2px);
+  padding: 0;
+  position: relative;
+  text-align: center;
+  line-height: 1.4;
+  margin-bottom: 2em;
+  margin-top: 2em;
+}
+
+.small {
+  display: block;
+  font-size: .6em;
+  padding-top: 0.25em;
+  opacity: .8;
+}
+
+.articles {
+  display: grid;
+  max-width: 1200px;
+  margin-inline: auto;
+  /* padding-inline: 24px; */
+  /* grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); */
+  gap: 24px;
+}
+
+/*画面幅が900px以上かつ1200px未満の時は、2列にする*/
+@media (min-width: 640px) and (max-width: 1199px) {
+  .articles {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/*画面幅が1200px以上の時は、3列にする*/
+@media (min-width: 1200px) {
+  .articles {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
