@@ -8,9 +8,10 @@ import { AutoScroll } from '@splidejs/splide-extension-auto-scroll';
 
 type Props = {
   articles: Article[];
+  perPage?: number;
 };
 
-export default function Page({ articles }: Props) {
+export default function Page({ articles, perPage }: Props) {
   return (
     <Splide
       aria-label="私のお気に入りの画像集"
@@ -25,11 +26,11 @@ export default function Page({ articles }: Props) {
         padding: "1rem", // スライド間の余白を設定
         arrows: false,
         gap: '1rem',
-        perPage: 3,
+        perPage: perPage,
         height: '15rem',
         // loopAdditionalSlides: 1,
         autoScroll: {
-          speed: .2,
+          speed: .1,
           autoStart: true,
         },
       }}

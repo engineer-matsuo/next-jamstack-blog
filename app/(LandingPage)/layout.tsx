@@ -17,7 +17,7 @@ export default async function RootLayout({ children }: Props) {
   return (
     <>
       <Header />
-      <Slider articles={data.contents}/>
+      <Slider articles={data.contents} perPage={3}/>
       <main className={styles.main}>{children}</main>
       <Footer />
     </>
