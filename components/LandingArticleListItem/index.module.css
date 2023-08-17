@@ -47,6 +47,7 @@
   padding: 0;
   aspect-ratio: 16 / 9;
   overflow: hidden;
+  position: relative;
 }
 
 .article img {
@@ -105,6 +106,12 @@
   display: none;
 }
 
+.absolute {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
 @media screen and (max-width: 900px) {
   /* .article {
     container: card/inline-size;
@@ -114,7 +121,7 @@
   }
 
   .article_body {
-    height: 200px;
+    height: 220px;
   }
   .article_body p {
     display: none;
@@ -122,7 +129,7 @@
 
 }
 
-@media screen and (max-width: 639px) {
+/* @media screen and (max-width: 639px) {
   .article {
     container: card/inline-size;
     height: auto;
@@ -142,7 +149,7 @@
   .in_readmore {
     display: block;
   }
-}
+} */
 
 @container card (max-width: 639px) {
   .article_wrapper {

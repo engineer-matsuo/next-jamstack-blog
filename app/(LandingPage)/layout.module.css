@@ -97,6 +97,16 @@
   justify-content: center;
 }
 
+.slider_big {
+  display: none;
+}
+.slider_middle {
+  display: none;
+}
+.slider_small {
+  display: block;
+}
+
 @media (min-width: 640px) {
   .h1 {
     width: 50%;
@@ -108,11 +118,31 @@
   .articles {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .slider_big {
+    display: none;
+  }
+  .slider_middle {
+    display: block;
+  }
+  .slider_small {
+    display: none;
+  }
 }
 
 /*画面幅が1200px以上の時は、3列にする*/
 @media (min-width: 1200px) {
   .articles {
     grid-template-columns: repeat(3, 1fr);
+  }
+
+  .slider_big {
+    display: block;
+  }
+  .slider_middle {
+    display: none;
+  }
+  .slider_small {
+    display: none;
   }
 }
