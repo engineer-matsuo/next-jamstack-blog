@@ -3,6 +3,7 @@ import { Article } from '@/libs/microcms';
 import styles from './index.module.css';
 import Link from 'next/link';
 import Image from 'next/image';
+import TagList from '@/components/TagList';
 
 type Props = {
   article: Article;
@@ -25,6 +26,9 @@ export default function Page({ article }: Props) {
           />
         </div>
         <div className={styles.article_body}>
+          <dd>
+            <TagList tags={article.tags} hasLink={false} />
+          </dd>
           <h2 className={styles.h2}>{article.title}</h2>
           <p>
             {article.description}

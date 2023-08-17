@@ -5,7 +5,7 @@ import styles from './index.module.css';
 export default function Header() {
   return (
     <header className={styles.header}>
-      <Link href="/">
+      {/* <Link href="/">
         <Image
           src="/logo.svg"
           alt="SIMPLE"
@@ -14,7 +14,8 @@ export default function Header() {
           height={133}
           priority
         />
-      </Link>
+      </Link> */}
+      <span>{process.env.SITE_NAME}</span>
     </header>
   );
 }

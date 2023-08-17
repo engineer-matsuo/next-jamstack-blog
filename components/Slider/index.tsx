@@ -33,6 +33,7 @@ export default function Page({ articles, perPage }: Props) {
           speed: .1,
           autoStart: true,
         },
+        pagination: false,
       }}
       extensions={{AutoScroll}}
     >
@@ -45,6 +46,9 @@ export default function Page({ articles, perPage }: Props) {
             objectFit="cover"
           >
           </Image>
+          <div className={`${styles.absolute} ${styles.title_background}`}>
+            <span className={`${styles.title}`}>{data.title}</span>
+          </div>
         </SplideSlide>
       ))}
     </Splide>

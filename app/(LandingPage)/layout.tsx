@@ -14,10 +14,19 @@ export default async function RootLayout({ children }: Props) {
   const data = await getList({
     limit: LIMIT
   });
+
   return (
     <>
       <Header />
-      <Slider articles={data.contents} perPage={3}/>
+      <div className={styles.slider_big}>
+        <Slider articles={data.contents} perPage={3}/>
+      </div>
+      <div className={styles.slider_middle}>
+        <Slider articles={data.contents} perPage={2}/>
+      </div>
+      <div className={styles.slider_small}>
+        <Slider articles={data.contents} perPage={1}/>
+      </div>
       <main className={styles.main}>{children}</main>
       <Footer />
     </>
