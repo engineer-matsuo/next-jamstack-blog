@@ -15,7 +15,9 @@ export default function Header() {
           priority
         />
       </Link> */}
-      <span>{process.env.SITE_NAME}</span>
+      <Link href="/">
+        <span>{process.env.SITE_NAME}</span>
+      </Link>
     </header>
   );
 }
