@@ -54,7 +54,7 @@ export default function Article({ data }: Props) {
         />
       </picture>
       <div
-        className={styles.content}
+        className={`${styles.content} ${styles.microcms}`}
         dangerouslySetInnerHTML={{
           __html: `${formatRichText(data.content)}`,
         }}
